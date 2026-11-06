@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Kristhian & Shallom | 08.05.2027</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            DEFAULT: '#556B2F',
+                            dark: '#3A4B20',
+                            light: '#6B8E23',
+                            accent: '#475B27',
+                            soft: '#7C9848'
+                        },
+                        cream: {
+                            DEFAULT: '#FDFBF7',
+                            dark: '#F3EDE2',
+                            card: '#FAF6EF'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA7C11',
+                            vintage: '#C5A059'
+                        },
+                        silver: {
+                            light: '#F3F4F6',
+                            DEFAULT: '#D1D5DB',
+                            dark: '#9CA3AF'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #3A4B20;
+            color: #2D2D2D;
+            overflow-x: hidden;
+        }
+
+        /* Victoriana Silver/Gold Tray Frame Styling */
+        .silver-plaque {
+            background: linear-gradient(135deg, #e6e6e6 0%, #ffffff 40%, #cccccc 70%, #b3b3b3 100%);
+            border: 14px solid #c5a059;
+            border-image: linear-gradient(to bottom right, #f3e5ab, #c5a059, #aa7c11, #d4af37) 1;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 25px rgba(0,0,0,0.3);
+            position: relative;
+            border-radius: 40px;
+        }
+
+        /* Slit slot relief inside plaque */
+        .photo-slit {
+            background: #1a1a1a;
+            box-shadow: inset 0 4px 8px rgba(0,0,0,0.9), 0 1px 2px rgba(255,255,255,0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+
+        /* Photobooth Strip dispenser animation */
+        .dispenser-container {
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+        }
+
+        #photoboothStrip {
+            transform: translateY(-120%);
+            transition: transform 1.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        #photoboothStrip.dispensed {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+
+        /* Lace Heart Button Overlay */
+        .lace-heart {
+            background-color: #556B2F;
+            background-image: radial-gradient(#6B8E23 1px, transparent 1px);
+            background-size: 8px 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 4px stroke #ffffff;
+            clip-path: path('M 100,30 A 20,20 0 0,0 60,30 A 20,20 0 0,0 20,30 Q 20,60 60,95 Q 100,60 100,30 Z');
+        }
+
+        /* Border Lace SVG pattern simulated */
+        .lace-border {
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
+        }
+
+        /* Photobooth strip paper styling */
+        .photo-strip-paper {
+            background: #ffffff;
+            padding: 10px 10px 20px 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #ddd;
+        }
+
+        .photo-strip-paper img {
+            filter: grayscale(100%) contrast(115%) brightness(95%);
+            transition: filter 0.4s ease;
+        }
+
+        .photo-strip-paper:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Wax Seal */
+        .wax-seal-olive {
+            background: radial-gradient(circle, #6B8E23 0%, #3A4B20 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 2px 3px rgba(255,255,255,0.3);
+            border: 2px solid #D4AF37;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #3A4B20;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #556B2F;
+            border-radius: 4px;
+            border: 1px solid #D4AF37;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 selection:bg-gold selection:text-olive-dark">
+
+    <!-- Audio Player Toggle Button -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="musicToggle" onclick="toggleMusic()" class="bg-olive-dark/90 backdrop-blur-md text-gold border border-gold/50 p-3 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center w-12 h-12">
+            <i id="musicIcon" class="fas fa-music text-lg"></i>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-piano-112185.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- MAIN CONTAINER FRAME -->
+    <div class="max-w-md md:max-w-2xl lg:max-w-3xl mx-auto min-h-screen bg-olive shadow-2xl relative border-x border-gold/30">
+
+        <!-- ================= 1. HERO / INTERACTIVE SLIT PHOTO DISPENSER ================= -->
+        <section class="min-h-screen flex flex-col justify-between items-center px-4 py-8 relative overflow-hidden text-center">
+            
+            <!-- Adornos en esquinas -->
+            <div class="absolute top-0 left-0 right-0 flex justify-between p-3 opacity-30 pointer-events-none">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="#D4AF37">
+                    <path d="M0,0 Q50,0 50,50 Q0,50 0,0 Z" />
+                    <circle cx="20" cy="20" r="4" />
+                </svg>
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="#D4AF37" class="transform scale-x-[-1]">
+                    <path d="M0,0 Q50,0 50,50 Q0,50 0,0 Z" />
+                    <circle cx="20" cy="20" r="4" />
+                </svg>
+            </div>
+
+            <!-- Header Titles -->
+            <div class="mt-4 z-10">
+                <p class="font-serif italic text-gold-light text-base md:text-lg tracking-widest uppercase mb-1">We Are Getting Married!</p>
+                <h1 class="font-script text-5xl md:text-7xl text-cream font-normal drop-shadow-md py-1">
+                    Kristhian & Shallom
+                </h1>
+                <div class="h-0.5 w-28 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-2"></div>
+                <p class="font-serif text-cream/90 text-sm tracking-widest uppercase">08 de Mayo de 2027</p>
+            </div>
+
+            <!-- SILVER PLAQUE WITH DISPENSER SLIT & HEART BUTTON -->
+            <div class="my-auto w-full max-w-xs md:max-w-sm z-10 relative">
+                <div class="silver-plaque p-5 md:p-6 text-center shadow-2xl relative overflow-hidden">
+                    <img src="img/marco-plata.png" alt="Marco" class="absolute inset-0 w-full h-full object-fill pointer-events-none opacity-40 z-0">
+    
+    <!-- El resto del contenido sigue aquí debajo... -->
+                    
+                    <!-- Relief Slit Slot -->
+                    <div class="photo-slit w-44 md:w-52 h-3.5 mx-auto rounded-full mb-3 relative z-20"></div>
+
+                    <!-- Dispenser Animation Box -->
+                    <div class="dispenser-container relative z-10 flex flex-col items-center justify-start min-h-[320px]">
+                        
+                        <!-- Photobooth Strip (Initially hidden inside slit) -->
+                        <div id="photoboothStrip" class="photo-strip-paper max-w-[190px] rounded-sm">
+                            <div class="w-full">
+                                <img src="img/foto-strip.png" alt="Kristhian & Shallom" class="w-full h-auto rounded shadow-sm object-cover">
+                            </div>
+                            <p class="font-script text-olive-dark text-center text-xl mt-3 font-bold tracking-wider">08.05.2027</p>
+                        </div>
+
+                        <!-- INITIAL HEART WITH LACE ("Click the Button") OVERLAY -->
+                        <div id="heartOverlay" class="absolute inset-0 flex flex-col items-center justify-center z-30 transition-all duration-700">
+                            
+                            <!-- Heart Lace Button Wrapper -->
+                            <button onclick="dispensePhotos()" class="group relative focus:outline-none transform hover:scale-105 transition-transform duration-300">
+                                <!-- Outer Lace Ring SVG -->
+                                <div class="relative flex items-center justify-center">
+                                    <img src="img/corazon-encaje.png" alt="Click the Button" class="w-56 h-auto drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+
+                                    <!-- Text inside heart -->
+                                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+                                        <span class="font-script text-3xl md:text-4xl text-cream font-bold drop-shadow group-hover:scale-110 transition-transform">Click the</span>
+                                        <span class="font-script text-3xl md:text-4xl text-cream font-bold drop-shadow group-hover:scale-110 transition-transform">Button</span>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <!-- Push Button below heart -->
+                            <button onclick="dispensePhotos()" class="mt-2 w-10 h-10 rounded-full bg-gradient-to-b from-gold-light via-gold to-gold-dark border-2 border-white shadow-lg flex items-center justify-center hover:brightness-110 active:scale-95 transition-all">
+                                <div class="w-4 h-4 rounded-full bg-olive-dark shadow-inner"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPEN INVITATION BUTTON (Revealed after click or scrolled) -->
+            <div id="openInvitationNav" class="z-10 pb-4 opacity-90 transition-all duration-500">
+                <a href="#detalles" class="group inline-flex flex-col items-center gap-2 text-cream hover:text-gold transition-colors duration-300">
+                    <span id="openText" class="font-serif tracking-widest text-xs uppercase text-gold-light group-hover:tracking-wider transition-all">OPEN INVITATION</span>
+                    <div class="wax-seal-olive w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transform group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-envelope-open text-gold text-lg"></i>
+                    </div>
+                    <i class="fas fa-chevron-down text-gold/70 text-xs animate-bounce mt-1"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= MAIN CONTENT DETAILS (CREAM VINTAGE CONTAINER) ================= -->
+        <div id="detalles" class="bg-cream rounded-t-[40px] px-6 py-12 relative shadow-2xl text-gray-800">
+            
+            <div class="w-16 h-1 bg-gold/50 mx-auto rounded-full mb-10"></div>
+
+            <!-- ================= 2. CUENTA REGRESIVA ================= -->
+            <section class="reveal text-center mb-16">
+                <span class="font-script text-4xl text-olive block mb-1">Nuestra Cuenta Regresiva</span>
+                <p class="font-serif text-gray-700 max-w-md mx-auto text-lg leading-relaxed italic mb-8">
+                    "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
+                </p>
+
+                <!-- Countdown Timer Card -->
+                <div class="bg-olive text-cream p-6 rounded-2xl shadow-xl border border-gold/40 max-w-md mx-auto">
+                    <h3 class="font-serif uppercase tracking-widest text-xs text-gold-light mb-4">Faltan Para El Gran Día</h3>
+                    
+                    <div class="grid grid-cols-4 gap-2 text-center" id="countdown">
+                        <div class="bg-olive-dark/70 p-3 rounded-lg border border-gold/30">
+                            <span id="days" class="font-serif text-2xl md:text-3xl font-bold text-gold block">00</span>
+                            <span class="text-[10px] uppercase tracking-wider text-cream/70 font-sans">Días</span>
+                        </div>
+                        <div class="bg-olive-dark/70 p-3 rounded-lg border border-gold/30">
+                            <span id="hours" class="font-serif text-2xl md:text-3xl font-bold text-gold block">00</span>
+                            <span class="text-[10px] uppercase tracking-wider text-cream/70 font-sans">Horas</span>
+                        </div>
+                        <div class="bg-olive-dark/70 p-3 rounded-lg border border-gold/30">
+                            <span id="minutes" class="font-serif text-2xl md:text-3xl font-bold text-gold block">00</span>
+                            <span class="text-[10px] uppercase tracking-wider text-cream/70 font-sans">Min</span>
+                        </div>
+                        <div class="bg-olive-dark/70 p-3 rounded-lg border border-gold/30">
+                            <span id="seconds" class="font-serif text-2xl md:text-3xl font-bold text-gold block">00</span>
+                            <span class="text-[10px] uppercase tracking-wider text-cream/70 font-sans">Seg</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 3. FECHA Y UBICACIÓN (GOOGLE MAPS) ================= -->
+            <section class="reveal mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="font-serif text-3xl text-olive font-bold uppercase tracking-wider">Fecha & Lugar</h2>
+                    <div class="h-0.5 w-16 bg-gold mx-auto my-2"></div>
+                </div>
+
+                <div class="bg-cream-card rounded-2xl p-6 md:p-8 border border-gold/30 shadow-md relative overflow-hidden">
+                    <div class="flex flex-col items-center text-center space-y-4">
+                        <div class="w-14 h-14 rounded-full bg-olive/10 flex items-center justify-center text-olive text-2xl mb-1 border border-gold/30">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        
+                        <h3 class="font-serif text-2xl font-bold text-olive">Ceremonia Religiosa</h3>
+                        
+                        <div class="text-gray-700 font-serif">
+                            <p class="text-xl font-bold text-gold-dark">Sábado, 8 de Mayo de 2027</p>
+                            <p class="text-lg font-semibold text-olive">2:00 PM (14:00 hrs)</p>
+                        </div>
+
+                        <div class="my-2 border-t border-gold/20 w-full"></div>
+
+                        <div class="space-y-1">
+                            <p class="font-bold text-gray-900 font-serif text-lg">Iglesia Bautista Reformada Trono de Gracia</p>
+                            <p class="text-sm text-gray-600">Calle Lisandro Alvarado, Santa Mónica</p>
+                        </div>
+
+                        <!-- Google Maps Redirect Button -->
+                        <a href="https://maps.google.com/?q=Iglesia+Bautista+Reformada+Trono+de+Gracia+Calle+Lisandro+Alvarado+Santa+Monica" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="mt-4 inline-flex items-center gap-2 bg-olive hover:bg-olive-dark text-cream font-medium px-6 py-3 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 border border-gold/40">
+                            <i class="fas fa-map-marker-alt text-gold"></i>
+                            <span>Ver Ubicación en Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 4. ITINERARIO ================= -->
+            <section class="reveal mb-16">
+                <div class="text-center mb-10">
+                    <h2 class="font-serif text-3xl text-olive font-bold uppercase tracking-wider">Itinerario</h2>
+                    <p class="font-script text-2xl text-gold-dark">El orden de la celebración</p>
+                    <div class="h-0.5 w-16 bg-gold mx-auto my-2"></div>
+                </div>
+
+                <div class="relative border-l-2 border-gold/40 ml-6 md:ml-10 space-y-8 pl-6 md:pl-8">
+                    <!-- Event 1 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] md:-left-[45px] top-0 w-8 h-8 rounded-full bg-olive text-gold flex items-center justify-center text-xs shadow-md border border-gold">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <div class="bg-cream-card p-4 rounded-xl border border-gold/20 shadow-sm">
+                            <span class="font-serif text-gold-dark font-bold text-sm">2:00 PM</span>
+                            <h4 class="font-serif text-xl font-bold text-olive">Ceremonia Religiosa</h4>
+                            <p class="text-sm text-gray-600">Entrada e inicio de la ceremonia en la Iglesia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] md:-left-[45px] top-0 w-8 h-8 rounded-full bg-olive text-gold flex items-center justify-center text-xs shadow-md border border-gold">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="bg-cream-card p-4 rounded-xl border border-gold/20 shadow-sm">
+                            <span class="font-serif text-gold-dark font-bold text-sm">3:30 PM</span>
+                            <h4 class="font-serif text-xl font-bold text-olive">Sesión de Fotos & Brindis</h4>
+                            <p class="text-sm text-gray-600">Fotos grupales y brindis junto a nuestros invitados.</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] md:-left-[45px] top-0 w-8 h-8 rounded-full bg-olive text-gold flex items-center justify-center text-xs shadow-md border border-gold">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="bg-cream-card p-4 rounded-xl border border-gold/20 shadow-sm">
+                            <span class="font-serif text-gold-dark font-bold text-sm">5:00 PM</span>
+                            <h4 class="font-serif text-xl font-bold text-olive">Recepción & Cena</h4>
+                            <p class="text-sm text-gray-600">Compartir de la comida y recepción oficial.</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] md:-left-[45px] top-0 w-8 h-8 rounded-full bg-olive text-gold flex items-center justify-center text-xs shadow-md border border-gold">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="bg-cream-card p-4 rounded-xl border border-gold/20 shadow-sm">
+                            <span class="font-serif text-gold-dark font-bold text-sm">7:00 PM</span>
+                            <h4 class="font-serif text-xl font-bold text-olive">Celebración & Baile</h4>
+                            <p class="text-sm text-gray-600">Fiesta, baile y corte del pastel de bodas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 5. CÓDIGO DE VESTIMENTA ================= -->
+            <section class="reveal mb-16">
+                <div class="bg-olive text-cream rounded-2xl p-8 text-center border border-gold/40 shadow-xl relative">
+                    <div class="w-12 h-12 rounded-full bg-gold/20 text-gold mx-auto flex items-center justify-center text-xl mb-3 border border-gold/30">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    
+                    <h3 class="font-serif text-2xl font-bold tracking-wide uppercase text-gold-light mb-1">Código de Vestimenta</h3>
+                    <p class="font-serif italic text-lg text-cream/90 mb-6">Formal / Elegante</p>
+
+                    <p class="text-sm text-cream/80 max-w-sm mx-auto mb-6">
+                        Deseamos que todos lucen radiantes. Les pedimos amablemente abstenerse de vestir los siguientes colores reservados:
+                    </p>
+
+                    <!-- COLOR RESTRICTIONS BADGES -->
+                    <div class="flex justify-center gap-4 md:gap-6">
+                        <!-- NO White -->
+                        <div class="flex flex-col items-center">
+                            <div class="relative w-12 h-12 rounded-full bg-white border-2 border-red-500 shadow-md flex items-center justify-center">
+                                <i class="fas fa-ban text-red-600 text-2xl opacity-90"></i>
+                            </div>
+                            <span class="text-xs mt-2 font-serif font-bold text-cream">NO Blanco</span>
+                        </div>
+
+                        <!-- NO Black -->
+                        <div class="flex flex-col items-center">
+                            <div class="relative w-12 h-12 rounded-full bg-black border-2 border-red-500 shadow-md flex items-center justify-center">
+                                <i class="fas fa-ban text-red-600 text-2xl opacity-90"></i>
+                            </div>
+                            <span class="text-xs mt-2 font-serif font-bold text-cream">NO Negro</span>
+                        </div>
+
+                        <!-- NO Red -->
+                        <div class="flex flex-col items-center">
+                            <div class="relative w-12 h-12 rounded-full bg-red-600 border-2 border-red-500 shadow-md flex items-center justify-center">
+                                <i class="fas fa-ban text-white text-2xl opacity-90"></i>
+                            </div>
+                            <span class="text-xs mt-2 font-serif font-bold text-cream">NO Rojo</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 6. SUGERENCIA DE REGALOS ================= -->
+            <section class="reveal mb-16">
+                <div class="text-center mb-8">
+                    <h2 class="font-serif text-3xl text-olive font-bold uppercase tracking-wider">Sugerencia de Regalos</h2>
+                    <div class="h-0.5 w-16 bg-gold mx-auto my-2"></div>
+                </div>
+
+                <div class="bg-cream-card rounded-2xl p-6 md:p-8 border border-gold/30 shadow-md text-center">
+                    <div class="w-14 h-14 rounded-full bg-gold/10 text-gold-dark mx-auto flex items-center justify-center text-2xl mb-4 border border-gold/20">
+                        <i class="fas fa-gift"></i>
+                    </div>
+
+                    <p class="font-serif text-gray-700 text-lg italic mb-6 leading-relaxed">
+                        "Su presencia en nuestra boda es el mayor regalo que podemos recibir. Si desean hacernos un presente adicional, contaremos con modalidad de lluvia de sobres o aportes para nuestra nueva etapa juntos."
+                    </p>
+
+                    <!-- Interactive Envelope Reveal -->
+                    <div class="bg-white p-5 rounded-xl border border-gold/30 shadow-sm max-w-sm mx-auto">
+                        <button onclick="toggleRegistryDetails()" class="w-full flex items-center justify-between text-left text-olive font-serif font-bold text-lg focus:outline-none">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-envelope-open-text text-gold-dark"></i>
+                                Lluvia de Sobres / Datos
+                            </span>
+                            <i id="registryChevron" class="fas fa-chevron-down text-sm transition-transform duration-300"></i>
+                        </button>
+
+                        <div id="registryDetails" class="hidden mt-4 pt-3 border-t border-gray-100 text-left text-sm text-gray-600 space-y-2">
+                            <p><strong class="text-olive font-serif">Lluvia de Sobres:</strong> Habrá un buzón especial dispuesto en la recepción.</p>
+                            <p><strong class="text-olive font-serif">Transferencias / Pago Móvil:</strong> Escríbenos directamente para compartirte los datos bancarios.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= 7. CONFIRMACIÓN (WHATSAPP RSVP) ================= -->
+            <section class="reveal text-center mb-10">
+                <div class="bg-gradient-to-b from-olive-dark to-olive text-cream rounded-2xl p-8 border-2 border-gold/50 shadow-2xl relative overflow-hidden">
+                    
+                    <div class="w-16 h-16 rounded-full bg-gold/20 text-gold mx-auto flex items-center justify-center text-3xl mb-4 border border-gold/40">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+
+                    <h3 class="font-serif text-3xl font-bold text-cream mb-2">Confirmación de Asistencia</h3>
+                    <p class="font-script text-2xl text-gold-light mb-4">¡Queremos contar contigo!</p>
+                    
+                    <p class="text-sm text-cream/80 max-w-md mx-auto mb-8">
+                        Por favor confirma tu asistencia lo antes posible a través de nuestro enlace directo a WhatsApp.
+                    </p>
+
+                    <!-- WhatsApp RSVP Button -->
+                    <a id="rsvpButton" 
+                       href="https://wa.me/?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Kristhian%20y%20Shallom%20el%208%20de%20Mayo%20de%202027." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-xl transition-all transform hover:scale-105 border border-emerald-400">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        <span>Confirmar Asistencia</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center pt-8 border-t border-gold/20">
+                <p class="font-script text-3xl text-olive">Kristhian & Shallom</p>
+                <p class="font-serif text-xs text-gray-500 uppercase tracking-widest mt-1">08.05.2027 • Caracas, Venezuela</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT ANIMATIONS & LOGIC -->
+    <script>
+        // 1. Dispense Photobooth Strip Animation
+        let isDispensed = false;
+        function dispensePhotos() {
+            const strip = document.getElementById('photoboothStrip');
+            const heartOverlay = document.getElementById('heartOverlay');
+            const openText = document.getElementById('openText');
+
+            if (!isDispensed) {
+                heartOverlay.style.opacity = '0';
+                heartOverlay.style.pointerEvents = 'none';
+                
+                setTimeout(() => {
+                    strip.classList.add('dispensed');
+                    if (openText) {
+                        openText.innerText = "DESPLÁZATE HACIA ABAJO";
+                    }
+                }, 200);
+                
+                isDispensed = true;
+            }
+        }
+
+        // 2. Countdown Timer Logic (Target: May 8, 2027 @ 2:00 PM)
+        const targetDate = new Date("May 8, 2027 14:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = String(days).padStart(2, '0');
+                document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-gold font-serif text-2xl font-bold'>¡Hoy es nuestro gran día!</div>";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3. Gift Accordion Toggle
+        function toggleRegistryDetails() {
+            const details = document.getElementById('registryDetails');
+            const chevron = document.getElementById('registryChevron');
+            details.classList.toggle('hidden');
+            chevron.classList.toggle('rotate-180');
+        }
+
+        // 4. Intersection Observer for Scroll Reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 5. Audio Background Player Toggle
+        let isPlaying = false;
+        const audio = document.getElementById("bgMusic");
+        const musicIcon = document.getElementById("musicIcon");
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.classList.remove("fa-pause");
+                musicIcon.classList.add("fa-music");
+            } else {
+                audio.play().then(() => {
+                    musicIcon.classList.remove("fa-music");
+                    musicIcon.classList.add("fa-pause");
+                }).catch(() => {});
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+</html>

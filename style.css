@@ -1,0 +1,11 @@
+/* Cargar la tipografía exacta de Canva desde Google Fonts o archivo propio */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cinzel:wght@400;600&display=swap');
+
+body {
+  font-family: 'Cinzel', serif;
+  background-color: #556B2F; /* Tu verde oliva */
+}
+
+.titulo-novios {
+  font-family: 'Pinyon Script', cursive;
+}
